@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donate | MinwaJayne Foundation by LKA</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <img src="assets/logo.png" alt="MinwaJayne Foundation Logo" class="logo-img">
+            <span>MinwaJayne Foundation by LKA</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html#home">Home</a></li>
+            <li class="dropdown">
+                <a href="index.html#about">About Us</a>
+                <ul class="dropdown-content">
+                    <li><a href="index.html#founding-story">Our Story</a></li>
+                    <li><a href="index.html#meet-founder">Meet the Founder</a></li>
+                    <li><a href="index.html#core-values">Our Values</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="index.html#pillars">Our Pillars of Impact</a>
+                <ul class="dropdown-content">
+                    <li><a href="index.html#feeding">Feeding Program</a></li>
+                    <li><a href="index.html#period-poverty">Period Poverty</a></li>
+                    <li><a href="index.html#mentoring">Mentoring</a></li>
+                    <li><a href="index.html#orphanages">Orphanages</a></li>
+                    <li><a href="index.html#street-families">Street Families</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="index.html#involved">Get Involved</a>
+                <ul class="dropdown-content">
+                    <li><a href="index.html#volunteer">Volunteer</a></li>
+                    <li><a href="index.html#donate">Donate</a></li>
+                    <li><a href="index.html#partner">Partner With Us</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="index.html#infohub">Infohub</a>
+                <ul class="dropdown-content">
+                    <li><a href="index.html#blog">Blog</a></li>
+                    <li><a href="index.html#gallery">Photo Gallery</a></li>
+                    <li><a href="index.html#success-stories">Success Stories</a></li>
+                </ul>
+            </li>
+            <li><a href="donate.html" class="active">Donate</a></li>
+            <li><a href="index.html#contact">Contact Us</a></li>
+        </ul>
+    </nav>
+    <section class="donate-section fade-in">
+        <h2>Support Our Mission</h2>
+        <div class="payment-icons">
+            <a href="https://www.example.com/mpesa-pay" class="payment-icon" title="Pay with Mpesa" target="_blank" rel="noopener">
+                <img src="assets/mpesa.png" alt="Mpesa" style="height:80px;width:auto;">
+            </a>
+            <a href="https://www.paypal.com/donate/?hosted_button_id=EXAMPLE" class="payment-icon" title="Pay with PayPal" target="_blank" rel="noopener">
+                <img src="assets/paypal.png" alt="PayPal" style="height:80px;width:auto;">
+            </a>
+        </div>
+        <form class="donate-form">
+            <div class="form-group">
+                <label for="name">Your Name</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Your Email</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="message">Message (optional)</label>
+                <textarea id="message" name="message" rows="3"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Donate Now</button>
+        </form>
+    </section>
+    <script>
+    // Donate form custom amount logic
+    document.addEventListener('DOMContentLoaded', function() {
+        const customRadio = document.querySelector('input[type="radio"][value="custom"]');
+        const customInput = document.querySelector('input[name="custom-amount"]');
+        const radios = document.querySelectorAll('input[type="radio"][name="amount"]');
+
+        function updateCustomInput() {
+            if (customRadio.checked) {
+                customInput.disabled = false;
+                customInput.focus();
+            } else {
+                customInput.disabled = true;
+                customInput.value = '';
+            }
+        }
+
+        radios.forEach(radio => {
+            radio.addEventListener('change', updateCustomInput);
+        });
+
+        customInput.addEventListener('focus', function() {
+            customRadio.checked = true;
+            updateCustomInput();
+        });
+
+        // Initialize on page load
+        updateCustomInput();
+    });
+    </script>
+</body>
+</html> 
